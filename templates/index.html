@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+	<body>
+		<form action='/' method='post'>
+			<input placeholder='Name' name='name'>
+			<input placeholder='Post content' name='post'>
+			<input type='submit' value='Submit'>
+		</form>
+		{% for post in posts %}
+		<div>{{ post[1] + ': ' + post[2]}}</div>
+		{% endfor %}
+		<form action='/del' method='post'>
+			<input type="submit" name="submit_button" value="CLEAR CHAT">
+		</form>
+		<form action='/refresh' method='get'>
+			<input type="submit" name="refresh_button" value="REFRESH CHAT">
+		</form>
+	</body>
+</html>
